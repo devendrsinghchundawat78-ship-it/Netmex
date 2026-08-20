@@ -255,11 +255,12 @@ internal suspend fun executeCloudstreamExtension(
                     metadata.title,
                     metadata.year?.let { "${metadata.title} $it" },
                 ).distinct()
-                val search = queries.asSequence()
-                    .mapNotNull { query -> runCatching { provider.search(query) }.getOrNull() }
-                    .flatten()
-                    .distinctBy { it.url }
-                    .toList()
+                val searchResults = mutableListOf<com.lagradost.cloudstream3.SearchResponse>()
+                for (query in queries) {
+                    searchResults += runCatching { provider.search(query).orEmpty() }
+                        .getOrDefault(emptyList())
+                }
+                val search = searchResults.distinctBy { it.url }
                 val selected = search.firstOrNull {
                     normalizeTitle(it.name) == normalizeTitle(metadata.title)
                 } ?: search.firstOrNull()
