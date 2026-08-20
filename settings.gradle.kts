@@ -1,4 +1,6 @@
-rootProject.name = "Netmex"
+// Keep the Gradle project identity stable because Compose generates the
+// `nuvio.composeapp.generated.resources` package from it. User-facing branding is Netmex.
+rootProject.name = "Nuvio"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
