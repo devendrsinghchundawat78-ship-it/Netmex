@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Netmex" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/netmex_background</item>
+    </style>
+
+    <style name="Theme.Netmex.Splash" parent="@style/Theme.Netmex" />
+    <style name="Theme.Netmex.Splash.ArcticBlue" parent="@style/Theme.Netmex.Splash" />
+    <style name="Theme.Netmex.Splash.Emerald" parent="@style/Theme.Netmex.Splash" />
+    <style name="Theme.Netmex.Splash.RoseGold" parent="@style/Theme.Netmex.Splash" />
+    <style name="Theme.Netmex.Splash.Copper" parent="@style/Theme.Netmex.Splash" />
+    <style name="Theme.Netmex.Splash.Graphite" parent="@style/Theme.Netmex.Splash" />
+</resources>
