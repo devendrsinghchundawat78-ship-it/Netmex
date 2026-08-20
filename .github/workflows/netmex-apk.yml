@@ -11,7 +11,7 @@ permissions:
 
 concurrency:
   group: netmex-android-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-apk:
@@ -28,6 +28,9 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+
+      - name: Set up Gradle cache
+        uses: gradle/actions/setup-gradle@v4
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
